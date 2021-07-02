@@ -128,7 +128,7 @@ var phones = {
         }
     },
     poco: {
-        PocoX3: {
+        pocox3: {
             brand: "Poco",
             model: "Poco X3",
             price: "100000 PKR",
