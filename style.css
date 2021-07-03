@@ -32,10 +32,7 @@ input:focus{
     outline: none;
     border: 3px solid black;
 }
-/* .inputDiv{
-    display: inline-flex;
-    justify-content: center;
-} */
+
 .buttonsDiv{
     display: flex;
     justify-content: center
@@ -71,4 +68,17 @@ tr{
 }
 td{
     border: 2px solid black; 
+}
+.emptyField::placeholder{
+    color: red;
+}
+#warImage{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+#warh1{
+    text-align: center !important;
+    display: block;
+    font-size: 50px !important;
 }

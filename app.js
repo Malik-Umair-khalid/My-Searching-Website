@@ -156,25 +156,52 @@ var modelInput = document.getElementById("modelInput")
 
 
 
-
 function search() {
     var brand = brandInput.value.toLowerCase()
     var model = modelInput.value.toLowerCase()
 
-        document.getElementById('mainDiv').innerHTML = ""
-        var mainDiv = document.getElementById('mainDivSearch')
-        var image = document.getElementById("image")
-        image.src = phones[brand][model].src
-        document.getElementById("brand").innerHTML = "Brand :" + " " + phones[brand][model].brand
-        document.getElementById("name").innerHTML = "Model :" + " " + phones[brand][model].model
-        document.getElementById("price").innerHTML = "Price :" + " " + phones[brand][model].price
-        document.getElementById("storage").innerHTML = "Storage :" + " " + phones[brand][model].storage
-        document.getElementById("camera").innerHTML = "Camera :" + " " + phones[brand][model].camera
-        document.getElementById("color").innerHTML = "Color :" + " " + phones[brand][model].color
-
+    var namess = phones[brand]
+    console.log(namess)
+    if (namess == undefined) {
+        if(brand == ""){
+            brandInput.setAttribute("placeholder" , "Please Enter Brand Name !")
+            brandInput.classList.add("emptyField")
+        }
+        else{
+            document.getElementById('mainDiv').innerHTML = ""
+            document.getElementById("mainDivSearch").innerHTML = ""
+            document.getElementById("warImage").src = "Baba.gif"
+        }
+    }
+    else {
+        namess = phones[brand][model]
+        if (namess == undefined) {
+            if(model == ""){
+                modelInput.classList.add("emptyField")
+                modelInput.setAttribute("placeholder" , "Please Enter Brand Name !")
+            }
+            else{
+                    document.getElementById('mainDiv').innerHTML = ""
+                    document.getElementById("mainDivSearch").innerHTML = ""
+                    document.getElementById("warImage").src = "Baba.gif"
+            }
+        }
+        else {
+            brandInput.classList.remove("emptyField")
+            modelInput.classList.remove("emptyField")
+            document.getElementById('mainDiv').innerHTML = ""
+            var mainDiv = document.getElementById('mainDivSearch')
+            var image = document.getElementById("image")
+            image.src = phones[brand][model].src
+            document.getElementById("brand").innerHTML = "Brand :" + " " + phones[brand][model].brand
+            document.getElementById("name").innerHTML = "Model :" + " " + phones[brand][model].model
+            document.getElementById("price").innerHTML = "Price :" + " " + phones[brand][model].price
+            document.getElementById("storage").innerHTML = "Storage :" + " " + phones[brand][model].storage
+            document.getElementById("camera").innerHTML = "Camera :" + " " + phones[brand][model].camera
+            document.getElementById("color").innerHTML = "Color :" + " " + phones[brand][model].col
+        }
+    }
 }
-
-
 
 
 
